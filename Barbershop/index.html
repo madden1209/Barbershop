@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Barbershop Appointment Booking</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav class="nav-container" role="navigation" aria-label="Primary navigation">
+      <div class="logo" aria-label="Barbershop logo">Barbershop</div>
+      <ul class="nav-links" role="menubar" aria-label="Main menu">
+        <li role="none"><a role="menuitem" href="index.html" class="active" aria-current="page">Book Appointment</a></li>
+        <li role="none"><a role="menuitem" href="admin.php">Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" id="booking-page">
+    <h1>Book Your Appointment</h1>
+    <p>Choose your service, preferred barber, and pick a date &amp; time.</p>
+    <form id="booking-form" aria-label="Appointment booking form" novalidate>
+      <div class="form-group">
+        <label for="customer-name">Full Name</label>
+        <input type="text" id="customer-name" name="customerName" autocomplete="name" required placeholder="Your full name" />
+      </div>
+      <div class="form-group">
+        <label for="service">Service</label>
+        <select id="service" name="service" required aria-describedby="service-help">
+          <option value="" disabled selected>Select a service</option>
+          <option value="Normal Cutting">Normal Cutting (RM 18)</option>
+          <option value="Relaxing">Relaxing (RM 125)</option>
+          <option value="Rebonding">Rebonding (RM 100)</option>
+          <option value="Keratin">Keratin (RM 300)</option>
+          <option value="Perming">Perming (RM 300)</option>
+          <option value="Coloring">Coloring (RM 50)</option>
+        </select>
+        <small id="service-help" class="form-help"></small>
+      </div>
+      <div class="form-group">
+        <label for="barber">Choose a Barber</label>
+        <select id="barber" name="barber" required>
+          <option value="" disabled selected>Select a barber</option>
+          <option value="Andriana">Andriana</option>
+          <option value="Andre">Andre</option>
+          <option value="Jamal">Jamal</option>
+          <option value="Abu">Abu</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="date-time">Date &amp; Time</label>
+        <input type="datetime-local" id="date-time" name="dateTime" required />
+      </div>
+      <button type="submit" class="btn-submit">Book Appointment</button>
+    </form>
+    <p id="booking-message" role="alert" class="message"></p>
+
+    <hr class="section-divider" />
+
+    <section id="review-section">
+      <h2>Customer Reviews</h2>
+      <form id="review-form" aria-label="Customer review form" novalidate>
+        <div class="form-group">
+          <label for="review-text">Your Review</label>
+          <textarea id="review-text" name="reviewText" required minlength="10" maxlength="500" placeholder="Write your review here..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Submit Review</button>
+      </form>
+      <div id="reviews-list" class="reviews-list" aria-live="polite" aria-relevant="additions"></div>
+      <p id="no-reviews" class="no-data" hidden>No reviews yet.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
