@@ -1,0 +1,15 @@
+[
+    {
+        "customerName": "amad",
+        "service": "Normal Cutting",
+        "barber": "Abu",
+        "dateTime": "2025-06-14T07:30:00+02:00",
+        "settled": true
+    },
+    {
+        "customerName": "Aiman Hakim",
+        "service": "Relaxing",
+        "barber": "Andriana",
+        "dateTime": "2025-06-12T10:00:00+02:00"
+    }
+]
